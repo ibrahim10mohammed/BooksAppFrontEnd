@@ -1,0 +1,42 @@
+.login-container {
+    background-color: #f8f9fa;
+  }
+  
+  .login-card {
+    width: 400px;
+    border-radius: 10px;
+    background-color: #ffffff;
+  
+    .form-label {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  
+    .form-control {
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      height: 45px;
+    }
+  
+    .btn {
+      background-color: #4a5df5;
+      color: #ffffff;
+      font-weight: 600;
+      height: 45px;
+      border-radius: 5px;
+      &:hover {
+        background-color: #3b4acb;
+      }
+    }
+  
+    a {
+      color: #4a5df5;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    label {
+      font-size: 0.85rem;
+    }
+  }

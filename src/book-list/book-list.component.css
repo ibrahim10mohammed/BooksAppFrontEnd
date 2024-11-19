@@ -1,0 +1,9 @@
+.table-responsive {
+    margin: 20px auto;
+    max-width: 90%;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    font-size: 1rem;
+  }

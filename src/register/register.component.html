@@ -1,0 +1,68 @@
+<div class="login-container d-flex justify-content-center align-items-center vh-100">
+  <div class="login-card p-4 shadow-lg">
+    <h2 class="text-center mb-4">Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter your email"
+          formControlName="email"
+          required
+        />
+        <div class="text-danger" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+          Valid email is required.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="role" class="form-label">Role</label>
+        <select id="role" class="form-control" formControlName="role" required>
+          <option value="" disabled selected>Select your role</option>
+          <option value="ADMIN">Admin</option>
+          <option value="USER">User</option>
+        </select>
+        <div class="text-danger" *ngIf="registerForm.get('role')?.touched && registerForm.get('role')?.invalid">
+          Role is required.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Enter your password"
+          formControlName="password"
+          required
+        />
+        <div class="text-danger" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          Password must be at least 6 characters.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="confirm-password" class="form-label">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          class="form-control"
+          placeholder="Confirm your password"
+          formControlName="confirmPassword"
+          required
+        />
+        <div class="text-danger" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid">
+          Confirm password is required.
+        </div> 
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Register</button>
+    </form>
+    <p class="text-center mt-3">
+      Already have an account? <button (click)="login()" class="btn btn-link">Login</button>
+    </p>
+  </div>
+</div>

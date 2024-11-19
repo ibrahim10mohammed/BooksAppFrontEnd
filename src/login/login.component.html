@@ -1,0 +1,47 @@
+<div class="login-container d-flex justify-content-center align-items-center vh-100">
+  <div class="login-card p-4 shadow-lg">
+    <h2 class="text-center mb-4">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter your email"
+          formControlName="email"
+          required
+        />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger">
+          Email is required.
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Enter your password"
+          formControlName="password"
+          required
+        />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+          Password is required.
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <input type="checkbox" id="show-password" />
+          <label for="show-password" class="form-check-label ms-1">Show Password</label>
+        </div>
+        <a routerLink="/reset-password" class="text-decoration-none">Forgot Password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <p class="text-center mt-3">
+      Don't have an account? <button (click)="register()" class="btn btn-link">Sign up</button>
+
+    </p>
+  </div>
+</div>
